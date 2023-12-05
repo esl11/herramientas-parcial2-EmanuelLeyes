@@ -1,0 +1,63 @@
+@model parcial2.ViewModels.FootwearListVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Alta de calzados</h1>
+
+<p>
+    <a asp-action="Create">Nuevo</a>
+</p>
+
+<form method="get" asp-action="Index" asp-controller="Footwear">
+    <div class="col-6 form-group mb-2">
+        <input class="form-control" asp-for="Filter">
+    </div> 
+    <button class="btn btn-primary" type="submit">Buscar</button>
+
+
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Año/temporada
+            </th>
+            <th>
+                Genero
+            </th>
+            <th>
+                Marca
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Footwears) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Release)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

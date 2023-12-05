@@ -1,0 +1,50 @@
+@model parcial2.ViewModels.MovementCreateVM
+
+@{
+    ViewData["Title"] = "Sale";
+    var Footwear = (Footwear?)ViewData["Footwear"];
+    var errorMsg = (string?)ViewData["ErrorMsg"];
+}
+
+<h1>Sale</h1>
+
+<h4>Footwear: @Footwear?.Name </h4>
+<hr />
+<div class="row">
+    @if(!string.IsNullOrEmpty(errorMsg)){
+        <div class="alert alert-danger" role="alert">
+            @errorMsg
+        </div>
+    }
+    <div class="col-md-4">
+        <form asp-action="Sale">
+            <div class="form-group">
+                <label asp-for="InvoiceNumber" class="control-label"></label>
+                <input asp-for="InvoiceNumber" class="form-control" />
+                <span asp-validation-for="InvoiceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="FootwearId" value="@Footwear?.Id" />
+            <div class="form-group">
+                <input type="submit" value="Sale" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

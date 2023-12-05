@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .jumbotron {
+        background-image: url('https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0026/6891/precio-objetivo-nike.jpg?1490348498');
+        background-size: cover;
+        background-position: center;
+        color: #333;
+        padding: 100px;
+        position: relative;
+        height: 75vh; /* Hacer que el .jumbotron ocupe el 100% de la altura de la pantalla */
+        display: flex;
+        align-items: center;
+    }
+
+    .jumbotron h1 {
+        color: #007bff;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .jumbotron h1 {
+        color: #007bff;
+    }
+
+    .jumbotron p,
+    .jumbotron a {
+        margin-bottom: 20px;
+    }
+
+    .subtitle {
+        font-weight: bold;
+        margin-top: -180px; /* Ajusta el valor según tus preferencias */
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <div class="overlay">
+            <h1 class="display-4">Bienvenidos a Ciro Sports</h1>
+            <p class="lead subtitle">Descubre la última moda en calzados deportivos</p>
+            <a class="btn btn-primary btn-lg" href="@Url.Action("Product", "Footwear")" role="button">Explora nuestros productos</a>
+        </div>
+    </div>
+</div>
