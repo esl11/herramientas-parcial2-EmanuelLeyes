@@ -265,3 +265,4 @@ C:\P2\obj\Debug\net7.0\refint\parcial2.dll
 C:\P2\obj\Debug\net7.0\parcial2.pdb
 C:\P2\obj\Debug\net7.0\parcial2.genruntimeconfig.cache
 C:\P2\obj\Debug\net7.0\ref\parcial2.dll
+C:\P2\obj\Debug\net7.0\parcial2.sourcelink.json
